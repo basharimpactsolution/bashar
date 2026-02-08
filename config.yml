@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: "basharimpactsolution/bashar"  # <-- maye da GitHub username da repo
+  branch: "main"
+
+media_folder: "assets/images"    # folder don hotuna
+public_folder: "/assets/images"  # URL don hotuna
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"              # folder don posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
