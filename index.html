@@ -1,8 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Panel</title>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bashar Impact Solution | Inspiring Change</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body></body>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo"><h1>BASHAR<span> IMPACT<span> SOLUTION</span></h1></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="zoom-in">
+            <h2>INSPIRING CHANGE, CREATING IMPACT</h2>
+            <p>• Digital creator, Daily Quran verses</p>
+            <p>• Motivation for daily life</p>
+            <p>• Faceless short videos</p>
+            <a href="#blog" class="btn-main">View Updates</a>
+        </div>
+    </section>
+
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="blog-grid" id="blog-posts">
+                <p>Visit the admin panel to start posting!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-flex">
+            <div class="about-image" data-aos="fade-right">
+                <img src="profile.PNG" alt="Bashar Usman" class="my-photo">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h1>About Bashar Usman</h1>
+                <p>My mission is to inspire and empower my fellow youth by leveraging wisdom and modern technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="facebook-feed" class="fb-section">
+        <div class="container">
+            <h2 class="section-title">Facebook Updates</h2>
+            <div class="fb-container">
+                <div class="fb-page" data-href="https://web.facebook.com/profile.php?id=100089924950337" data-tabs="timeline" data-width="500" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container" data-aos="flip-left">
+            <div class="contact-card">
+                <h2>Send Message</h2>
+                <form name="contact" method="POST" data-netlify="true" action="/success">
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
+                    <button type="submit" class="btn">Send Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bashar Impact Solution | Inspiring Change, Creating Impacts</p>
+    </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+            });
+        }
+    </script>
+</body>
 </html>
